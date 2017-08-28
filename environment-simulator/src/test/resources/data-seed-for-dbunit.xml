@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataset>
+	<LOCATION location_id='1' location_name='Sydney'
+		location_code='SYD' latitude='-33.52' longitude='151.13' elevation='58' />
+	<LOCATION location_id='2' location_name='Melbourne'
+		location_code='MEL' latitude='-37.49' longitude='144.58' elevation='25' />
+	<LOCATION location_id='3' location_name='Adelaide'
+		location_code='ADL' latitude='-34.56' longitude='138.36' elevation='59' />
+
+	<WEATHER_DETAILS location_id='1' date='2009-01-01'
+		temperature='14' pressure='63' humidity='1006' conditions='RAIN' />
+	<WEATHER_DETAILS location_id='1' date='2010-01-01'
+		temperature='17' pressure='62' humidity='1012' conditions='FOG' />
+	<WEATHER_DETAILS location_id='1' date='2011-01-01'
+		temperature='12' pressure='85' humidity='1011' conditions='RAIN' />
+	<WEATHER_DETAILS location_id='1' date='2012-01-01'
+		temperature='16' pressure='70' humidity='1026' conditions='FOG' />
+	<WEATHER_DETAILS location_id='1' date='2013-01-01'
+		temperature='11' pressure='62' humidity='1006' conditions='RAIN' />
+	<WEATHER_DETAILS location_id='1' date='2014-01-01'
+		temperature='10' pressure='65' humidity='1001' conditions='RAIN' />
+
+</dataset>

@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+	PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!-- Class which has all the interfaces to the corresponding queries in this 
+	file -->
+<mapper namespace="com.cba.simulator.dao.DataReadDAO">
+
+	<resultMap type="EnvironmentDetailsDO" id="resultMap_environmentData">
+	</resultMap>
+	<resultMap type="WeatherDetailsDO" id="resultMap_weatherDetails">
+	</resultMap>
+
+
+	<resultMap id="resultMap_environmentDataFull" type="EnvironmentDetailsDO">
+		<id property="locationId" column="LOCATION_ID" />
+		<result property="locationName" column="LOCATION_NAME" />
+		<result property="locationCode" column="LOCATION_CODE" />
+		<result property="latitude" column="LATITUDE" />
+		<result property="longitude" column="LONGITUDE" />
+		<result property="elevation" column="ELEVATION" />
+		<collection property="weatherDetails" ofType="WeatherDetailsDO">
+			<id property="id" column="ID" />
+			<result property="locationId" column="LOCATION_ID" />
+			<result property="date" column="DATE" />
+			<result property="year" column="YEAR" />
+			<result property="dayofyear" column="DAYOFYEAR" />
+			<result property="temperature" column="TEMPERATURE" />
+			<result property="humidity" column="HUMIDITY" />
+			<result property="pressure" column="PRESSURE" />
+			<result property="conditions" column="CONDITIONS" />
+		</collection>
+	</resultMap>
+	<select id="fetchEnvironmentDataFull" parameterType="int"
+		resultMap="resultMap_environmentDataFull">
+		SELECT LOC.LOCATION_ID, LOC.LOCATION_NAME,
+		LOC.LOCATION_CODE,
+		LOC.LATITUDE, LOC.LONGITUDE, LOC.ELEVATION,
+		WEATHER.ID, WEATHER.DATE,
+		YEAR(WEATHER.DATE) AS YEAR,
+		DAYOFYEAR(WEATHER.DATE) AS DAYOFYEAR,WEATHER.TEMPERATURE,
+		WEATHER.HUMIDITY, WEATHER.PRESSURE, WEATHER.CONDITIONS
+		FROM LOCATION
+		LOC JOIN WEATHER_DETAILS WEATHER ON
+		LOC.LOCATION_ID=WEATHER.LOCATION_ID
+		ORDER BY DAYOFYEAR;
+	</select>
+
+
+	<resultMap id="resultMap_environmentDataForOneDay" type="EnvironmentDetailsDO">
+		<id property="locationId" column="LOCATION_ID" />
+		<result property="locationName" column="LOCATION_NAME" />
+		<result property="locationCode" column="LOCATION_CODE" />
+		<result property="latitude" column="LATITUDE" />
+		<result property="longitude" column="LONGITUDE" />
+		<result property="elevation" column="ELEVATION" />
+		<collection property="weatherDetails" ofType="WeatherDetailsDO">
+			<id property="id" column="ID" />
+			<result property="locationId" column="LOCATION_ID" />
+			<result property="date" column="DATE" />
+			<result property="year" column="YEAR" />
+			<result property="dayofyear" column="DAYOFYEAR" />
+			<result property="temperature" column="TEMPERATURE" />
+			<result property="humidity" column="HUMIDITY" />
+			<result property="pressure" column="PRESSURE" />
+			<result property="conditions" column="CONDITIONS" />
+		</collection>
+	</resultMap>
+	<select id="fetchEnvironmentDataForOneDay" parameterType="int"
+		resultMap="resultMap_environmentDataForOneDay">
+		SELECT LOC.LOCATION_ID, LOC.LOCATION_NAME,
+		LOC.LOCATION_CODE,
+		LOC.LATITUDE, LOC.LONGITUDE, LOC.ELEVATION,
+		WEATHER.ID, WEATHER.DATE,
+		YEAR(WEATHER.DATE) AS YEAR,
+		DAYOFYEAR(WEATHER.DATE) AS DAYOFYEAR,WEATHER.TEMPERATURE,
+		WEATHER.HUMIDITY, WEATHER.PRESSURE, WEATHER.CONDITIONS
+		FROM LOCATION
+		LOC JOIN WEATHER_DETAILS WEATHER ON
+		LOC.LOCATION_ID=WEATHER.LOCATION_ID AND DAYOFYEAR(WEATHER.DATE) =
+		#{dayOfYear}
+		ORDER
+		BY DAYOFYEAR;
+	</select>
+
+	<resultMap id="resultMap_environmentDataForPeriod" type="EnvironmentDetailsDO">
+		<id property="locationId" column="LOCATION_ID" />
+		<result property="locationName" column="LOCATION_NAME" />
+		<result property="locationCode" column="LOCATION_CODE" />
+		<result property="latitude" column="LATITUDE" />
+		<result property="longitude" column="LONGITUDE" />
+		<result property="elevation" column="ELEVATION" />
+		<collection property="weatherDetails" ofType="WeatherDetailsDO">
+			<id property="id" column="ID" />
+			<result property="locationId" column="LOCATION_ID" />
+			<result property="date" column="DATE" />
+			<result property="year" column="YEAR" />
+			<result property="dayofyear" column="DAYOFYEAR" />
+			<result property="temperature" column="TEMPERATURE" />
+			<result property="humidity" column="HUMIDITY" />
+			<result property="pressure" column="PRESSURE" />
+			<result property="conditions" column="CONDITIONS" />
+		</collection>
+	</resultMap>
+	<select id="fetchEnvironmentDataForPeriod" parameterType="int"
+		resultMap="resultMap_environmentDataForPeriod">
+		SELECT LOC.LOCATION_ID, LOC.LOCATION_NAME,
+		LOC.LOCATION_CODE,
+		LOC.LATITUDE, LOC.LONGITUDE, LOC.ELEVATION,
+		WEATHER.ID, WEATHER.DATE,
+		YEAR(WEATHER.DATE) AS YEAR,
+		DAYOFYEAR(WEATHER.DATE) AS DAYOFYEAR,WEATHER.TEMPERATURE,
+		WEATHER.HUMIDITY, WEATHER.PRESSURE, WEATHER.CONDITIONS
+		FROM LOCATION
+		LOC JOIN WEATHER_DETAILS WEATHER ON
+		LOC.LOCATION_ID=WEATHER.LOCATION_ID AND DAYOFYEAR(WEATHER.DATE)
+		BETWEEN #{startDayOfYear} AND #{endDayOfYear}
+		ORDER BY DAYOFYEAR;
+	</select>
+
+	<select id="getLocationDetails" parameterType="String"
+		resultMap="resultMap_environmentData">
+		SELECT LOCATION_ID AS LOCATIONID, LOCATION_NAME AS
+		LOCATIONNAME, LOCATION_CODE AS LOCATIONCODE, LATITUDE,
+		LONGITUDE,
+		ELEVATION FROM LOCATION
+		WHERE LOCATION_NAME =
+		#{locationName}
+	</select>
+</mapper>

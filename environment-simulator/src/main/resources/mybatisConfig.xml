@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<!DOCTYPE
+ configuration
+    PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-config.dtd"
+	>
+<configuration>
+	<!-- To get properties from Connection.properties that can be used in this 
+		xml file, not using since we need password encryption -->
+	<!-- <properties resource="properties/Connection.properties" /> -->
+	<!-- Mapping all dataObjects(in fi.elisa.da.dataloadengine.dataobject) to 
+		alias names which can be used in all Mapper.xml files of myBatis -->
+	<typeAliases>
+		<typeAlias type="com.cba.simulator.dataobject.EnvironmentDetailsDO"
+			alias="EnvironmentDetailsDO" />
+		<typeAlias type="com.cba.simulator.dataobject.WeatherDetailsDO"
+			alias="WeatherDetailsDO" />
+	</typeAliases>
+	<!-- myBatis connection configurations with connection pooling -->
+	<environments default="development">
+		<environment id="development">
+			<transactionManager type="JDBC" />
+			<dataSource type="POOLED">
+				<!--connection details are fetched from Connection.properties via MyBatisConnectionFactory 
+					after password encryption -->
+				<property name="driver" value="com.mysql.jdbc.Driver" />
+				<property name="url" value="jdbc:mysql://localhost:3306/weather" />
+				<property name="username" value="root" />
+				<property name="password" value="password" />
+				<property name="poolMaximumActiveConnections" value="3" />
+				<property name="poolMaximumIdleConnections" value="1" />
+			</dataSource>
+		</environment>
+	</environments>
+	<!-- myBatis mapper files with queries -->
+	<mappers>
+		<mapper resource="mybatis/dataReadMapper.xml" />
+	</mappers>
+</configuration>
