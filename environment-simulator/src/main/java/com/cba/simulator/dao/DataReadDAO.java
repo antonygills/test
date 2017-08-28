@@ -1,3 +1,12 @@
+/******************************************************
+* Copyright (c) August 2017, Gills Antony.
+* All Rights Reserved
+* 
+* This file can be redistributed and/or modified,
+* under the terms of the GNU General Public License
+* as published by the Free Software Foundation,
+* either version 3 of the License, or any later version.
+*******************************************************/
 package com.cba.simulator.dao;
 
 import java.util.List;
