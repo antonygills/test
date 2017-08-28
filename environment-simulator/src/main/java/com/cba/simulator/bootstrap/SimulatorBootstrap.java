@@ -1,13 +1,9 @@
 package com.cba.simulator.bootstrap;
 
-import java.text.SimpleDateFormat;
-import java.util.Calendar;
 import java.util.Date;
-import java.util.GregorianCalendar;
 
 import org.apache.commons.lang3.exception.ExceptionUtils;
 import org.apache.log4j.Logger;
-import org.omg.CORBA.portable.ApplicationException;
 
 import com.cba.simulator.constant.AppConstants;
 import com.cba.simulator.constant.ErrorConstants;
@@ -16,7 +12,6 @@ import com.cba.simulator.exception.BusinessException;
 import com.cba.simulator.exception.UtilsException;
 import com.cba.simulator.simulator.SimulatorController;
 import com.cba.simulator.util.DateUtils;
-import com.cba.simulator.util.Utils;
 
 /**
  * Acts as triggering point of SimulatorBootstrap.
@@ -69,7 +64,7 @@ public class SimulatorBootstrap {
 			Date date = null;
 			if (args.length == 1 || args.length == 2) {
 				startDate = DateUtils.getFormattedDateFromString(args[0]);
-				date = new Date();
+				date = DateUtils.addDayToDate(new Date(), -1);
 				if (startDate.before(DateUtils.getFormattedDate(date))) {
 					throw new BusinessException(ErrorConstants.BUSINESS_INVALIDARGS_PASTDATE);
 				}
@@ -107,11 +102,11 @@ public class SimulatorBootstrap {
 			if (args.length == 0) {
 				simulatorInputDTO.setInputOperation(AppConstants.PREDICT_DEFAULT_ONE_WEEK);
 				
-				Date startDate = DateUtils.getFutureDate(new Date(), 1);
+				Date startDate = DateUtils.addDayToDate(new Date(), 1);
 				simulatorInputDTO.setStartDate(startDate);
 				simulatorInputDTO.setStartDayOfYear(DateUtils.getDayOfYear(startDate));
 				
-				Date endDate = DateUtils.getFutureDate(startDate, AppConstants.NUMBER_OF_DAYS_FOR_WEEK);
+				Date endDate = DateUtils.addDayToDate(startDate, AppConstants.NUMBER_OF_DAYS_FOR_WEEK);
 				simulatorInputDTO.setEndDate(endDate);
 				simulatorInputDTO.setEndDayOfYear(DateUtils.getDayOfYear(endDate));
 			}

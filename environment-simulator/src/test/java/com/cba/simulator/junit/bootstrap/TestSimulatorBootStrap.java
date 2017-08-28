@@ -39,19 +39,21 @@ public class TestSimulatorBootStrap {
 	 */
 	@Parameterized.Parameters
 	public static Collection inputParametersList() {
-		String[] inputInstance1 = {};
+		String[] inputInstance1 = {"2020-01-15"};
 		SimulatorInputDTO expectedResult1 = new SimulatorInputDTO();
-		expectedResult1.setStartDayOfYear(0);
+		expectedResult1.setStartDayOfYear(15);
 		boolean expectedValidationResult1 = true;
 
-		String[] inputInstance2 = { "2020-01-15" };
+		String[] inputInstance2 = { "2020-01-10", "2020-01-20" };
 		SimulatorInputDTO expectedResult2 = new SimulatorInputDTO();
-		expectedResult2.setStartDayOfYear(15);
+		expectedResult2.setStartDayOfYear(10);
+		expectedResult2.setEndDayOfYear(20);
 		boolean expectedValidationResult2 = true;
 
 		String[] inputInstance3 = { "2020-01-22", "2020-01-26" };
 		SimulatorInputDTO expectedResult3 = new SimulatorInputDTO();
 		expectedResult3.setStartDayOfYear(22);
+		expectedResult3.setEndDayOfYear(26);
 		boolean expectedValidationResult3 = true;
 
 		return Arrays.asList(new Object[][] { { inputInstance1, expectedResult1, expectedValidationResult1 },
@@ -68,5 +70,6 @@ public class TestSimulatorBootStrap {
 	public void testProcessInputArgs() throws UtilsException {
 		SimulatorInputDTO simulatorInputDTO = SimulatorBootstrap.processInputArgs(inputInstance);
 		assertEquals(expectedResult.getStartDayOfYear(), simulatorInputDTO.getStartDayOfYear());
+		assertEquals(expectedResult.getEndDayOfYear(), simulatorInputDTO.getEndDayOfYear());
 	}
 }

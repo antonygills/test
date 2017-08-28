@@ -114,13 +114,13 @@ public class DateUtils {
 	}
 
 	/**
-	 * Return a date after adding number of days to input date.
+	 * Return a date after adding or subtracting number of days to input date.
 	 * 
 	 * @param dateInstance
 	 * @param numberOfDaysToAdd
 	 * @return
 	 */
-	public static Date getFutureDate(final Date dateInstance, final int numberOfDaysToAdd) {
+	public static Date addDayToDate(final Date dateInstance, final int numberOfDaysToAdd) {
 		Calendar cal = new GregorianCalendar();
 		cal.setTime(dateInstance);
 		cal.add(Calendar.DATE, numberOfDaysToAdd);
