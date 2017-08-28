@@ -18,18 +18,12 @@ import com.cba.simulator.model.PredictionFunction;
 
 @RunWith(Parameterized.class)
 public class TestPredictionFunctionParameterized {
-	
+
 	static PredictionFunction predictionFunction;
 	private double inputTemperature;
 	private double inputPressure;
 	private String expectedResult;
 
-	/**
-	 * Sets up the test inputs. (Called once in this class.)
-	 * 
-	 * @throws ParseException
-	 * 
-	 */
 	@BeforeClass
 	public static void setUpOnce() throws ParseException {
 		predictionFunction = new PredictionFunction();
@@ -37,6 +31,13 @@ public class TestPredictionFunctionParameterized {
 
 	/**
 	 * constructor that takes in one row of test data from collection Parameters.
+	 * 
+	 * @param inputTemperature
+	 *            - temperature input.
+	 * @param inputPressure
+	 *            - pressure input.
+	 * @param expectedResult
+	 *            - expected result.
 	 */
 	public TestPredictionFunctionParameterized(double inputTemperature, double inputPressure, String expectedResult) {
 		this.inputTemperature = inputTemperature;

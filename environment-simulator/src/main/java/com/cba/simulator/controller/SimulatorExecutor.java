@@ -1,4 +1,4 @@
-package com.cba.simulator.simulator;
+package com.cba.simulator.controller;
 
 import java.util.ArrayList;
 import java.util.Date;
@@ -46,11 +46,11 @@ public class SimulatorExecutor {
 	 * output from historical data Write output to text file.
 	 * 
 	 * @param environmentDataList
-	 *            contains list of historical environment details of different
+	 *            - contains list of historical environment details of different
 	 *            locations.
 	 * @param simulatorInputDTO
-	 *            arguments passed as input.
-	 * @throws UtilsException
+	 *            - arguments passed as input.
+	 * @throws UtilsException if any Util operations fails.
 	 */
 	public void simulateEnvironmentConditions(List<EnvironmentDetailsDO> environmentDataList,
 			SimulatorInputDTO simulatorInputDTO) throws UtilsException {
@@ -82,9 +82,9 @@ public class SimulatorExecutor {
 	 * Predicts output from historical data.
 	 * 
 	 * @param environmentData
-	 *            contains historical environment details of one location.
+	 *            - contains historical environment details of one location.
 	 * @param simulatorInputDTO
-	 *            arguments passed as input.
+	 *            - arguments passed as input.
 	 * @return list of simulator output
 	 */
 	public List<SimulatorOutputDTO> simulateConditionsPerLocation(EnvironmentDetailsDO environmentData,
@@ -109,7 +109,7 @@ public class SimulatorExecutor {
 	 * Creates a map with key as day of year and value as list of weather details.
 	 * 
 	 * @param weatherDetailsList
-	 *            contains list of weather details of one location.
+	 *            - contains list of weather details of one location.
 	 * @return map with day of year(key) and list of weather details(value).
 	 */
 	public Map<Integer, List<WeatherDetailsDO>> prepareEnvironmentData(List<WeatherDetailsDO> weatherDetailsList) {
@@ -127,6 +127,7 @@ public class SimulatorExecutor {
 	 * Prepare output data and write to output file.
 	 * 
 	 * @param environmentSimulationResult
+	 *            - output list of environmental conditions.
 	 * @throws UtilsException
 	 */
 	private void prepareOutputContent(List<SimulatorOutputDTO> environmentSimulationResult) throws UtilsException {
@@ -142,11 +143,11 @@ public class SimulatorExecutor {
 	 * Insert details to output object.
 	 * 
 	 * @param environmentData
-	 *            output environment details of a day for the location.
+	 *            - output environment details of a day for the location.
 	 * @param dayOfYearForPrediction
-	 *            the day for which prediction is done.
+	 *            - the day for which prediction is done.
 	 * @param simulatorInputDTO
-	 *            arguments passed as input.
+	 *            - arguments passed as input.
 	 * @return predicted output environment details of particular location for one
 	 *         day.
 	 */

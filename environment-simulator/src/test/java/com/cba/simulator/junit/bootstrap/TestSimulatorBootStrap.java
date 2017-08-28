@@ -23,6 +23,13 @@ public class TestSimulatorBootStrap {
 
 	/**
 	 * constructor that takes in one row of test data from collection Parameters.
+	 * 
+	 * @param inputInstance
+	 *            - input values for test.
+	 * @param expectedResult
+	 *            - expected result of test.
+	 * @param expectedValidationResult
+	 *            - expected validation result of validateInputArgs method.
 	 */
 	public TestSimulatorBootStrap(String[] inputInstance, SimulatorInputDTO expectedResult,
 			boolean expectedValidationResult) {
@@ -39,7 +46,7 @@ public class TestSimulatorBootStrap {
 	 */
 	@Parameterized.Parameters
 	public static Collection inputParametersList() {
-		String[] inputInstance1 = {"2020-01-15"};
+		String[] inputInstance1 = { "2020-01-15" };
 		SimulatorInputDTO expectedResult1 = new SimulatorInputDTO();
 		expectedResult1.setStartDayOfYear(15);
 		boolean expectedValidationResult1 = true;

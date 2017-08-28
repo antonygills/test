@@ -53,6 +53,5 @@ public class SimulatorInputDTO {
 	public void setInputOperation(String inputOperation) {
 		this.inputOperation = inputOperation;
 	}
-	
 
 }

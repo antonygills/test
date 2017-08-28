@@ -20,12 +20,6 @@ public class TestDateUtils {
 	private static Date inputDateTimeInstance;
 	private static String inputDateString;
 
-	/**
-	 * Sets up the test inputs. (Called once in this class.)
-	 * 
-	 * @throws ParseException
-	 * 
-	 */
 	@BeforeClass
 	public static void setUpOnce() throws ParseException {
 		inputDateString = "2017-01-10 10:30:05";

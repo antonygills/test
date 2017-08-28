@@ -20,12 +20,17 @@ import com.cba.simulator.exception.UtilsException;
  */
 @RunWith(Parameterized.class)
 public class TestSimulatorBootStrapFailureCases {
-	
+
 	private String[] inputInstance;
 	private String expectedResult;
 
 	/**
 	 * constructor that takes in one row of test data from collection Parameters.
+	 * 
+	 * @param inputInstance
+	 *            - input values for test.
+	 * @param expectedResult
+	 *            - expected result of test.
 	 */
 	public TestSimulatorBootStrapFailureCases(String[] inputInstance, String expectedResult) {
 		this.inputInstance = inputInstance;

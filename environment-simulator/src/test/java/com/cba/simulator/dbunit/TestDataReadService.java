@@ -50,6 +50,9 @@ public class TestDataReadService extends DatabaseTestCase {
 
 	/**
 	 * Test case for testing if tables exist.
+	 * 
+	 * @throws Exception
+	 *             any exception.
 	 */
 	@Test
 	public void testTables() throws Exception {
@@ -63,18 +66,27 @@ public class TestDataReadService extends DatabaseTestCase {
 
 	/**
 	 * Test case for basic fetch operation.
+	 * 
+	 * @throws DAOException
+	 *             if the method fails to fetch data from database.
 	 */
 	@Test
 	public void testFetchEnvironmentDataForOneDay() throws DAOException {
 		dataReadService = new DataReadService();
-		List<EnvironmentDetailsDO> environmentData = dataReadService.fetchEnvironmentDataForOneDay(1);
-		assertNotNull("EnvironmentData shouldn't be null", environmentData);
-		assertEquals(1, environmentData.get(0).getLocationId());
-		assertEquals("Sydney", environmentData.get(0).getLocationName());
-		assertEquals("SYD", environmentData.get(0).getLocationCode());
-		assertEquals("-33.52", environmentData.get(0).getLatitude());
-		assertEquals("151.13", environmentData.get(0).getLongitude());
-		assertEquals(58, environmentData.get(0).getElevation());
+		EnvironmentDetailsDO environmentData = null;
+		List<EnvironmentDetailsDO> environmentDataList = dataReadService.fetchEnvironmentDataForOneDay(1);
+		assertNotNull("EnvironmentDataList shouldn't be null", environmentDataList);
+		for (EnvironmentDetailsDO environmentDataInstance : environmentDataList) {
+			if (1 == environmentDataInstance.getLocationId()) {
+				environmentData = environmentDataInstance;
+			}
+		}
+		assertEquals(1, environmentData.getLocationId());
+		assertEquals("Sydney", environmentData.getLocationName());
+		assertEquals("SYD", environmentData.getLocationCode());
+		assertEquals("-33.52", environmentData.getLatitude());
+		assertEquals("151.13", environmentData.getLongitude());
+		assertEquals(58, environmentData.getElevation());
 	}
 
 }

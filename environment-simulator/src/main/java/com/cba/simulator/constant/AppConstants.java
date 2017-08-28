@@ -26,7 +26,7 @@ public class AppConstants {
 	public static final int ARGS_MAX_COUNT = 2;
 	public static final int NUMBER_OF_DAYS_FOR_WEEK = 7;
 	public static final String SPLITLINE_PATTERN = "||";
-	
+
 	public static final int SUCCESS = 1;
 	public static final int FAILURE = 0;
 	public static final String ERROR_STACK_LOG_PATTERN = "Error Stacktrace ::";

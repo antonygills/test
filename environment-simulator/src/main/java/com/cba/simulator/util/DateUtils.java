@@ -22,9 +22,10 @@ public class DateUtils {
 	 * string.
 	 * 
 	 * @param dateString
-	 *            date in string format
+	 *            - date in string format
 	 * @return formatted Date
 	 * @throws UtilsException
+	 *             if the specified string cannot be formatted to Date.
 	 */
 	public static Date getFormattedDateFromString(final String dateString) throws UtilsException {
 		SimpleDateFormat sdf = new SimpleDateFormat();
@@ -45,8 +46,10 @@ public class DateUtils {
 	 * object.
 	 * 
 	 * @param dateInstance
-	 * @return
+	 *            - date in Date format.
+	 * @return formatted date in Date format.
 	 * @throws UtilsException
+	 *             if the specified date cannot be formatted.
 	 */
 	public static Date getFormattedDate(final Date dateInstance) throws UtilsException {
 		SimpleDateFormat sdf = new SimpleDateFormat();
@@ -67,7 +70,8 @@ public class DateUtils {
 	 * Returns formatted date-time from the input Date.
 	 * 
 	 * @param dateInstance
-	 * @return
+	 *            - date in Date format.
+	 * @return formatted Date-Time as String.
 	 */
 	public static String getFormattedeDateTime(final Date dateInstance) {
 		SimpleDateFormat sdf = new SimpleDateFormat();
@@ -79,7 +83,8 @@ public class DateUtils {
 	 * Returns the day of the year of the input date.
 	 * 
 	 * @param dateInstance
-	 * @return day number of the input year
+	 *            date input.
+	 * @return day number of the input year.
 	 */
 	public static int getDayOfYear(final Date dateInstance) {
 		Calendar cal = new GregorianCalendar();
@@ -91,7 +96,10 @@ public class DateUtils {
 	 * Returns the Date from the DayOfYear.
 	 * 
 	 * @param dayOfYear
-	 * @return
+	 *            - Day of Year.
+	 * @param year
+	 *            - Year under consideration.
+	 * @return Date.
 	 */
 	public static Date getDateFromDayOfYear(final int dayOfYear, final int year) {
 		Calendar cal = new GregorianCalendar();
@@ -104,8 +112,8 @@ public class DateUtils {
 	 * Method to extract the year from Date.
 	 * 
 	 * @param dateInstance
-	 *            date instance in Date format
-	 * @return
+	 *            - date instance in Date format.
+	 * @return Year.
 	 */
 	public static int getYearFromDate(Date dateInstance) {
 		SimpleDateFormat sdf = new SimpleDateFormat();
@@ -117,8 +125,11 @@ public class DateUtils {
 	 * Return a date after adding or subtracting number of days to input date.
 	 * 
 	 * @param dateInstance
+	 *            - Date input.
 	 * @param numberOfDaysToAdd
-	 * @return
+	 *            - number of Days to be added to input Date. Negative value for
+	 *            subtraction.
+	 * @return Date after adding day.
 	 */
 	public static Date addDayToDate(final Date dateInstance, final int numberOfDaysToAdd) {
 		Calendar cal = new GregorianCalendar();

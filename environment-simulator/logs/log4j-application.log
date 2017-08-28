@@ -1,0 +1,58 @@
+2017-08-28 19:23:43 DEBUG DataReadService:54 - Enter fetchEnvironmentDataForOneDay with input dayOfYear - 1
+2017-08-28 19:23:44 DEBUG DataReadService:67 - Exit fetchEnvironmentDataForOneDay.
+2017-08-28 19:24:56 DEBUG DataReadService:54 - Enter fetchEnvironmentDataForOneDay with input dayOfYear - 1
+2017-08-28 19:24:57 DEBUG DataReadService:67 - Exit fetchEnvironmentDataForOneDay.
+2017-08-28 19:26:26 DEBUG DataReadService:54 - Enter fetchEnvironmentDataForOneDay with input dayOfYear - 1
+2017-08-28 19:26:26 DEBUG DataReadService:67 - Exit fetchEnvironmentDataForOneDay.
+2017-08-28 19:47:30 DEBUG SimulatorBootstrap:39 - Enter SimulatorBootstrap.
+2017-08-28 19:47:30 DEBUG SimulatorController:47 - Enter startExecution.
+2017-08-28 19:47:30 DEBUG DataReadService:82 - Enter fetchEnvironmentDataForPeriod with startDayOfYear - 240 and endDayOfYear - 243
+2017-08-28 19:47:31 DEBUG DataReadService:96 - Exit fetchEnvironmentDataForPeriod.
+2017-08-28 19:47:31 DEBUG SimulatorExecutor:57 - Enter simulateEnvironmentConditions.
+2017-08-28 19:47:31 DEBUG SimulatorExecutor:92 - Enter simulateConditionsForLocation with location - Melbourne
+2017-08-28 19:47:31 DEBUG SimulatorExecutor:104 - Exit prepareEnvironmentData.
+2017-08-28 19:47:31 DEBUG SimulatorExecutor:92 - Enter simulateConditionsForLocation with location - Adelaide
+2017-08-28 19:47:31 DEBUG SimulatorExecutor:104 - Exit prepareEnvironmentData.
+2017-08-28 19:47:31 DEBUG SimulatorExecutor:92 - Enter simulateConditionsForLocation with location - Sydney
+2017-08-28 19:47:31 DEBUG SimulatorExecutor:104 - Exit prepareEnvironmentData.
+2017-08-28 19:47:31 DEBUG SimulatorExecutor:133 - Enter prepareOutputContent.
+2017-08-28 19:47:31 DEBUG FileUtils:31 - Enter writeOutputToFile.
+2017-08-28 19:47:31 INFO  FileUtils:49 - Successfully wrote output to the file : src/main/resources/output/ForecastedData.txt
+2017-08-28 19:47:31 DEBUG FileUtils:55 - Exit writeOutputToFile.
+2017-08-28 19:47:31 DEBUG SimulatorExecutor:138 - Exit prepareOutputContent.
+2017-08-28 19:47:31 DEBUG SimulatorExecutor:74 - Exit simulateEnvironmentConditions.
+2017-08-28 19:47:31 DEBUG SimulatorController:58 - Exit startExecution.
+2017-08-28 19:47:31 DEBUG SimulatorBootstrap:49 - Exit gracefully after completing execution.
+2017-08-28 19:49:22 DEBUG DataReadService:54 - Enter fetchEnvironmentDataForOneDay with input dayOfYear - 1
+2017-08-28 19:49:23 DEBUG DataReadService:67 - Exit fetchEnvironmentDataForOneDay.
+2017-08-28 22:20:56 DEBUG DataReadService:57 - Enter fetchEnvironmentDataForOneDay with input dayOfYear - 1
+2017-08-28 22:20:58 DEBUG DataReadService:70 - Exit fetchEnvironmentDataForOneDay.
+2017-08-28 22:22:52 DEBUG DataReadService:57 - Enter fetchEnvironmentDataForOneDay with input dayOfYear - 1
+2017-08-28 22:22:52 DEBUG DataReadService:70 - Exit fetchEnvironmentDataForOneDay.
+2017-08-28 22:26:44 DEBUG DataReadService:57 - Enter fetchEnvironmentDataForOneDay with input dayOfYear - 1
+2017-08-28 22:26:44 DEBUG DataReadService:70 - Exit fetchEnvironmentDataForOneDay.
+2017-08-28 22:27:16 DEBUG DataReadService:57 - Enter fetchEnvironmentDataForOneDay with input dayOfYear - 1
+2017-08-28 22:27:16 DEBUG DataReadService:70 - Exit fetchEnvironmentDataForOneDay.
+2017-08-28 22:27:35 DEBUG DataReadService:57 - Enter fetchEnvironmentDataForOneDay with input dayOfYear - 1
+2017-08-28 22:27:35 DEBUG DataReadService:70 - Exit fetchEnvironmentDataForOneDay.
+2017-08-28 22:28:57 DEBUG DataReadService:57 - Enter fetchEnvironmentDataForOneDay with input dayOfYear - 1
+2017-08-28 22:28:58 DEBUG DataReadService:70 - Exit fetchEnvironmentDataForOneDay.
+2017-08-28 22:30:33 DEBUG SimulatorBootstrap:38 - Enter SimulatorBootstrap.
+2017-08-28 22:30:33 DEBUG SimulatorController:50 - Enter startExecution.
+2017-08-28 22:30:33 DEBUG DataReadService:88 - Enter fetchEnvironmentDataForPeriod with startDayOfYear - 241 and endDayOfYear - 245
+2017-08-28 22:30:34 DEBUG DataReadService:102 - Exit fetchEnvironmentDataForPeriod.
+2017-08-28 22:30:34 DEBUG SimulatorExecutor:57 - Enter simulateEnvironmentConditions.
+2017-08-28 22:30:34 DEBUG SimulatorExecutor:92 - Enter simulateConditionsForLocation with location - Melbourne
+2017-08-28 22:30:35 DEBUG SimulatorExecutor:104 - Exit prepareEnvironmentData.
+2017-08-28 22:30:35 DEBUG SimulatorExecutor:92 - Enter simulateConditionsForLocation with location - Sydney
+2017-08-28 22:30:35 DEBUG SimulatorExecutor:104 - Exit prepareEnvironmentData.
+2017-08-28 22:30:35 DEBUG SimulatorExecutor:92 - Enter simulateConditionsForLocation with location - Adelaide
+2017-08-28 22:30:35 DEBUG SimulatorExecutor:104 - Exit prepareEnvironmentData.
+2017-08-28 22:30:35 DEBUG SimulatorExecutor:134 - Enter prepareOutputContent.
+2017-08-28 22:30:35 DEBUG FileUtils:32 - Enter writeOutputToFile.
+2017-08-28 22:30:35 INFO  FileUtils:50 - Successfully wrote output to the file : src/main/resources/output/ForecastedData.txt
+2017-08-28 22:30:35 DEBUG FileUtils:56 - Exit writeOutputToFile.
+2017-08-28 22:30:35 DEBUG SimulatorExecutor:139 - Exit prepareOutputContent.
+2017-08-28 22:30:35 DEBUG SimulatorExecutor:74 - Exit simulateEnvironmentConditions.
+2017-08-28 22:30:35 DEBUG SimulatorController:62 - Exit startExecution.
+2017-08-28 22:30:35 DEBUG SimulatorBootstrap:48 - Exit gracefully after completing execution.

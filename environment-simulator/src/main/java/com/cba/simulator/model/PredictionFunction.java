@@ -29,9 +29,10 @@ public class PredictionFunction {
 	 * option).
 	 * 
 	 * @param weatherDetails
-	 *            list of weather details of one particular day of year of a
+	 *            - list of weather details of one particular day of year of a
 	 *            location.
 	 * @param outputDO
+	 *            - predicted output conditions.
 	 * @return predicted output environment details of particular location for one
 	 *         day.
 	 */
@@ -45,13 +46,14 @@ public class PredictionFunction {
 	 * informations.
 	 * 
 	 * @param weatherDetails
-	 *            list of weather details of one particular day of year of a
+	 *            - list of weather details of one particular day of year of a
 	 *            location.
-	 * @param outputDO
-	 * @return predicted output environment details of particular location for one
+	 * @param simulatedOutputDO
+	 *            - predicted output conditions.
+	 * @return predicted output environment details of particular location for one.
 	 */
 	public SimulatorOutputDTO getLocationWeatherInfo(final List<WeatherDetailsDO> weatherDetails,
-			SimulatorOutputDTO outputDO) {
+			SimulatorOutputDTO simulatedOutputDO) {
 		int sizeOfList = weatherDetails.size();
 
 		double[] temperatureList = new double[sizeOfList];
@@ -71,23 +73,21 @@ public class PredictionFunction {
 
 		String weatherCondition = getWeatherCondition(resultantTemperature, resultantPressure);
 
-		outputDO.setTemperature(Utils.getRoundedValue(resultantTemperature));
-		outputDO.setPressure(Utils.getRoundedValue(resultantPressure));
-		outputDO.setHumidity(resultantHumidity);
-		outputDO.setWeatherCondition(weatherCondition);
-		return outputDO;
+		simulatedOutputDO.setTemperature(Utils.getRoundedValue(resultantTemperature));
+		simulatedOutputDO.setPressure(Utils.getRoundedValue(resultantPressure));
+		simulatedOutputDO.setHumidity(resultantHumidity);
+		simulatedOutputDO.setWeatherCondition(weatherCondition);
+		return simulatedOutputDO;
 	}
 
 	/**
-	 * This method generates forecast values based input values The prediction model
-	 * is based on ARIMA Refer: https://github.com/Workday/timeseries-forecast ARIMA
-	 * model parameters are passed to obtain forecast result The structure contains
-	 * forecasted values
+	 * This method generates forecast values based on input values. The prediction
+	 * model is based on ARIMA. Reference:
+	 * https://github.com/Workday/timeseries-forecast. ARIMA model parameters are
+	 * passed to obtain forecast result.
 	 * 
-	 * @param double[]
-	 *            inputData, input data
-	 * @param int
-	 *            forecastSize, the expected number of forecast output
+	 * @param inputData
+	 *            - input data
 	 * @return double[] forecastData, forecasted output
 	 */
 	public double predictWeatherParams(final double[] inputData) {
@@ -109,8 +109,10 @@ public class PredictionFunction {
 	 * predict the weather type based on the weather parameters.
 	 *
 	 * @param temperature
+	 *            - temperature
 	 * @param pressure
-	 * @return weather type
+	 *            - pressure
+	 * @return weather type - predicted weather type
 	 */
 	public String getWeatherCondition(final double temperature, final double pressure) {
 		String weatherType = null;

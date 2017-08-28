@@ -24,6 +24,7 @@ public class DataReadService {
 	 * 
 	 * @return list of historical Environment Details
 	 * @throws DAOException
+	 *             if the method fails to fetch data from database.
 	 */
 	public List<EnvironmentDetailsDO> fetchEnvironmentDataFull() throws DAOException {
 		LOGGER.debug("Enter fetchEnvironmentDataFull.");
@@ -47,8 +48,10 @@ public class DataReadService {
 	 * Fetch environment historical data for a particular day of year from database.
 	 * 
 	 * @param dayOfYear
+	 *            - Day of Year.
 	 * @return list of historical Environment Details
 	 * @throws DAOException
+	 *             if the method fails to fetch data from database.
 	 */
 	public List<EnvironmentDetailsDO> fetchEnvironmentDataForOneDay(final int dayOfYear) throws DAOException {
 		LOGGER.debug("Enter fetchEnvironmentDataForOneDay with input dayOfYear - " + dayOfYear);
@@ -73,9 +76,12 @@ public class DataReadService {
 	 * database.
 	 * 
 	 * @param startDayOfYear
+	 *            - start Day of Year.
 	 * @param endDayOfYear
+	 *            - end of Year.
 	 * @return list of historical Environment Details
 	 * @throws DAOException
+	 *             if the method fails to fetch data from database.
 	 */
 	public List<EnvironmentDetailsDO> fetchEnvironmentDataForPeriod(final int startDayOfYear, final int endDayOfYear)
 			throws DAOException {
@@ -95,15 +101,17 @@ public class DataReadService {
 		}
 		LOGGER.debug("Exit fetchEnvironmentDataForPeriod.");
 		return environmentData;
-		
+
 	}
 
 	/**
 	 * Fetch the location details of the input location Name database.
 	 * 
 	 * @param locationName
-	 * @return
+	 *            - Location Name.
+	 * @return environment details of the input location.
 	 * @throws DAOException
+	 *             if the method fails to fetch data from database.
 	 */
 	public EnvironmentDetailsDO getLocationDetails(final String locationName) throws DAOException {
 		LOGGER.debug("Enter getLocationDetails with locationName - " + locationName);

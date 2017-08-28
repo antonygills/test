@@ -7,15 +7,15 @@ import org.apache.log4j.Logger;
 
 import com.cba.simulator.constant.AppConstants;
 import com.cba.simulator.constant.ErrorConstants;
+import com.cba.simulator.controller.SimulatorController;
 import com.cba.simulator.dataobject.SimulatorInputDTO;
 import com.cba.simulator.exception.BusinessException;
 import com.cba.simulator.exception.UtilsException;
-import com.cba.simulator.simulator.SimulatorController;
 import com.cba.simulator.util.DateUtils;
 
 /**
  * Acts as triggering point of SimulatorBootstrap.
- * </p>
+ * <p>
  * This class is responsible for the following,
  * <ul>
  * <li>validate the input arguments.</li>
@@ -32,8 +32,7 @@ public class SimulatorBootstrap {
 	 * Main Method - Entry point method to SimulatorBootstrap
 	 * 
 	 * @param args
-	 * @throws UtilsException
-	 * @throws BusinessException
+	 *            - user input arguments
 	 */
 	public static void main(String[] args) {
 		LOGGER.debug("Enter SimulatorBootstrap.");
@@ -53,9 +52,12 @@ public class SimulatorBootstrap {
 	 * method to validate input arguments
 	 * 
 	 * @param args
-	 *            maximum of two arguments. All arguments should be date.
+	 *            - user input arguments
+	 * @return true if validation is successful
 	 * @throws BusinessException
+	 *             if input arguments are not correct.
 	 * @throws UtilsException
+	 *             if util function fails.
 	 */
 	public static boolean validateInputArgs(final String[] args) throws BusinessException, UtilsException {
 		try {
@@ -92,20 +94,21 @@ public class SimulatorBootstrap {
 	 * input data object.
 	 * 
 	 * @param args
-	 *            maximum of two arguments. All arguments should be date.
-	 * @return
+	 *            - maximum of two arguments. All arguments should be date.
+	 * @return input object with data based on user input.
 	 * @throws UtilsException
+	 *             if any Util function fails.
 	 */
 	public static SimulatorInputDTO processInputArgs(final String[] args) throws UtilsException {
 		SimulatorInputDTO simulatorInputDTO = new SimulatorInputDTO();
 		try {
 			if (args.length == 0) {
 				simulatorInputDTO.setInputOperation(AppConstants.PREDICT_DEFAULT_ONE_WEEK);
-				
+
 				Date startDate = DateUtils.addDayToDate(new Date(), 1);
 				simulatorInputDTO.setStartDate(startDate);
 				simulatorInputDTO.setStartDayOfYear(DateUtils.getDayOfYear(startDate));
-				
+
 				Date endDate = DateUtils.addDayToDate(startDate, AppConstants.NUMBER_OF_DAYS_FOR_WEEK);
 				simulatorInputDTO.setEndDate(endDate);
 				simulatorInputDTO.setEndDayOfYear(DateUtils.getDayOfYear(endDate));
@@ -133,11 +136,11 @@ public class SimulatorBootstrap {
 	/**
 	 * method to print all stack trace of Exceptions
 	 * 
-	 * @param batchInputVO
-	 * @param e
+	 * @param exception
+	 *            - Exception
 	 */
-	private static void printExceptionStackTrace(Exception e) {
-		LOGGER.error(AppConstants.ERROR_STACK_LOG_PATTERN + ExceptionUtils.getStackTrace(e));
+	private static void printExceptionStackTrace(Exception exception) {
+		LOGGER.error(AppConstants.ERROR_STACK_LOG_PATTERN + ExceptionUtils.getStackTrace(exception));
 	}
 
 }

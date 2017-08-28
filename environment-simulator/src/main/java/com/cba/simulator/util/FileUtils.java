@@ -18,14 +18,15 @@ public class FileUtils {
 	private static final Logger LOGGER = Logger.getLogger(FileUtils.class);
 
 	/**
-	 * Creates file if the input filePath does not exist,
-	 * then write the input content to the file.
+	 * Creates file if the input filePath does not exist, then write the input
+	 * content to the file.
 	 * 
 	 * @param filePath
-	 *            path of the to which data will be written.
+	 *            - path of the to which data will be written.
 	 * @param content
-	 *            content that needs to be written to the file.
+	 *            - content that needs to be written to the file.
 	 * @throws UtilsException
+	 *             if file write operation fails.
 	 */
 	public static void writeOutputToFile(String filePath, String content) throws UtilsException {
 		LOGGER.debug("Enter writeOutputToFile.");

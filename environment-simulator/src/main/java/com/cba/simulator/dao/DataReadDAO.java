@@ -18,18 +18,20 @@ public interface DataReadDAO {
 	/**
 	 * Fetch entire environment historical data from database.
 	 * 
-	 * @return
+	 * @return list of all Environmental Details.
 	 * @throws DAOException
+	 *             if the method fails to fetch data from database.
 	 */
 	public List<EnvironmentDetailsDO> fetchEnvironmentDataFull() throws DAOException;
 
 	/**
-	 * Fetch environment historical data for a particular day of year from
-	 * database.
+	 * Fetch environment historical data for a particular day of year from database.
 	 * 
 	 * @param dayOfYear
-	 * @return
+	 *            - Day of Year.
+	 * @return list of Environmental Details.
 	 * @throws DAOException
+	 *             if the method fails to fetch data from database.
 	 */
 	public List<EnvironmentDetailsDO> fetchEnvironmentDataForOneDay(final int dayOfYear) throws DAOException;
 
@@ -38,20 +40,24 @@ public interface DataReadDAO {
 	 * database.
 	 * 
 	 * @param startDayOfYear
+	 *            - start Day of Year.
 	 * @param endDayOfYear
-	 * @return
+	 *            - end Day of Year.
+	 * @return list of Environmental Details.
 	 * @throws DAOException
+	 *             if the method fails to fetch data from database.
 	 */
 	public List<EnvironmentDetailsDO> fetchEnvironmentDataForPeriod(final @Param("startDayOfYear") int startDayOfYear,
 			final @Param("endDayOfYear") int endDayOfYear) throws DAOException;
 
 	/**
-	 * Fetch the location details of the input location Name
-	 * database.
+	 * Fetch the location details of the input location Name database.
 	 * 
 	 * @param locationName
-	 * @return
+	 *            - location name.
+	 * @return Environmental Details of input location.
 	 * @throws DAOException
+	 *             if the method fails to fetch data from database.
 	 */
 	public EnvironmentDetailsDO getLocationDetails(final String locationName) throws DAOException;
 }

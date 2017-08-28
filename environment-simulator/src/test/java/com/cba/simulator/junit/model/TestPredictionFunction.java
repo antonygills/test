@@ -20,12 +20,6 @@ public class TestPredictionFunction {
 	private static SimulatorOutputDTO simulatorOutputDTO;
 	private static PredictionFunction predictionFunction;
 
-	/**
-	 * Sets up the test inputs. (Called once in this class.)
-	 * 
-	 * @throws ParseException
-	 * 
-	 */
 	@BeforeClass
 	public static void setUpOnce() throws ParseException {
 		predictionFunction = new PredictionFunction();
@@ -47,9 +41,9 @@ public class TestPredictionFunction {
 	 */
 	private static void generateSampleHistoricalData() {
 		Random randomGenerator = new Random();
-		WeatherDetailsDO weatherDetailsDO ;
+		WeatherDetailsDO weatherDetailsDO;
 		for (int i = 0; i <= 8; i++) {
-			weatherDetailsDO = 	new WeatherDetailsDO();
+			weatherDetailsDO = new WeatherDetailsDO();
 			weatherDetailsDO.setTemperature(randomGenerator.nextInt(20));
 			weatherDetailsDO.setPressure(randomGenerator.nextInt(80));
 			weatherDetailsDO.setHumidity(randomGenerator.nextInt(1010));
