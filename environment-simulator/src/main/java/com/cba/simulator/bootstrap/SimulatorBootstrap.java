@@ -79,18 +79,27 @@ public class SimulatorBootstrap {
 	 *             if util function fails.
 	 */
 	public static boolean validateInputArgs(final String[] args) throws BusinessException, UtilsException {
+		Date startDate = null;
+		Date endDate = null;
+		Date date = null;
 		try {
-			Date startDate = null;
-			Date endDate = null;
-			Date date = null;
 			if (args.length == 1 || args.length == 2) {
+				if (!DateUtils.validateDatePattern(args[0])) {
+					throw new BusinessException(ErrorConstants.BUSINESS_INVALIDARGS);
+				}
+
 				startDate = DateUtils.getFormattedDateFromString(args[0]);
 				date = DateUtils.addDayToDate(new Date(), -1);
 				if (startDate.before(DateUtils.getFormattedDate(date))) {
 					throw new BusinessException(ErrorConstants.BUSINESS_INVALIDARGS_PASTDATE);
 				}
 			}
+
 			if (args.length == 2) {
+				if (!DateUtils.validateDatePattern(args[1])) {
+					throw new BusinessException(ErrorConstants.BUSINESS_INVALIDARGS);
+				}
+
 				endDate = DateUtils.getFormattedDateFromString(args[1]);
 				if (endDate == null || endDate.before(startDate)) {
 					throw new BusinessException(ErrorConstants.BUSINESS_INVALIDARGS_ENDDATE);
@@ -99,6 +108,7 @@ public class SimulatorBootstrap {
 					throw new BusinessException(ErrorConstants.BUSINESS_INVALIDARGS_INPUTRANGE);
 				}
 			}
+
 			if (args.length > AppConstants.ARGS_MAX_COUNT) {
 				throw new BusinessException(ErrorConstants.BUSINESS_INVALIDARGS);
 			}

@@ -9,7 +9,7 @@
 *******************************************************/
 package com.cba.simulator.junit.util;
 
-import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.*;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -73,5 +73,13 @@ public class TestDateUtils {
 	@Test
 	public void testGetYearFromDate() {
 		assertEquals(2017, DateUtils.getYearFromDate(inputDateInstance));
+	}
+
+	@Test
+	public void testValidateDatePattern() {
+		assertTrue(DateUtils.validateDatePattern("2017-01-01"));
+		assertFalse(DateUtils.validateDatePattern("01-01-2017"));
+		assertFalse(DateUtils.validateDatePattern("2017/01/01"));
+		assertFalse(DateUtils.validateDatePattern("string"));
 	}
 }
