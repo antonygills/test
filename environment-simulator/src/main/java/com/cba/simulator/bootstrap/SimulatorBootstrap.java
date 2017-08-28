@@ -38,7 +38,17 @@ public class SimulatorBootstrap {
 	private static final Logger LOGGER = Logger.getLogger(SimulatorBootstrap.class);
 
 	/**
-	 * Main Method - Entry point method to SimulatorBootstrap
+	 * Main Method - Entry point method to SimulatorBootstrap.
+	 * <p>
+	 * Accepts user input arguments as follows,
+	 * <ul>
+	 * <li>No arguments - simulate future environment data for 1 week from
+	 * today.</li>
+	 * <li>One Date argument (Date in "yyyy-MM-dd" format) - simulate future
+	 * environment data for the input date.</li>
+	 * <li>Two Date arguments (Date in "yyyy-MM-dd" format) - simulate future
+	 * environment data for the input date range.</li>
+	 * </ul>
 	 * 
 	 * @param args
 	 *            - user input arguments
