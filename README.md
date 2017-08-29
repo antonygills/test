@@ -32,7 +32,7 @@ Execute the command to build jar :
 ```
 
 
-The following outputs jar will be generated :  **environment-simulator-1.0.jar**
+The following outputs jar will be generated :  **environment-simulator.jar**
 
 You can skip the unit test cases by executing below mentioned command :
 ```
@@ -50,9 +50,9 @@ This module works in 3 modes :
 
 ###### Sample commands to execute the program,
 ```
-	java -jar environment-simulator-1.0.jar
-	java -jar environment-simulator-1.0.jar <date>
-	java -jar environment-simulator-1.0.jar <start-date> <end-date>
+	java -jar environment-simulator.jar
+	java -jar environment-simulator.jar <date>
+	java -jar environment-simulator.jar <start-date> <end-date>
 ```
 
 Note : The date format should be yyyy-MM-dd, for eg: 2017-01-01.
