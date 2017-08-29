@@ -4,10 +4,10 @@ Environment Simulation program predicts environment details such as weather cond
 
 
 ## Database setup
-- Execute the scripts in the location "/src/main/resources/database/table_create_scripts.sql" to create database and tables in mysql database.</br>
-- Execute all insert scripts in the location "/src/main/resources/database" to load historical data for default locations to database.</br>
+- Execute the scripts in the location "*/src/main/resources/database/table_create_scripts.sql*" to create database and tables in mysql database.</br>
+- Execute all insert scripts in the location "*/src/main/resources/database*" to load historical data for default locations to database.</br>
 
-	NOTE : Following excel ("/src/main/resources/database/create_historical_data.xlsx" ) will help to create insert
+	NOTE : Following excel ("*/src/main/resources/database/create_historical_data.xlsx*" ) will help to create insert
 	scripts of historical data.
 
 	Default Locations : Sydney, Melbourne, Adelaide.
@@ -91,7 +91,7 @@ Format of data in the output file :
 
 JUnit test cases are available in the following path within the project,
 
-`"/src/test/java"`
+`"*/src/test/java*"`
 
 which would run on build using Maven.
 
