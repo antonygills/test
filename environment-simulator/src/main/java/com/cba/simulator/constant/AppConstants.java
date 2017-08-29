@@ -15,7 +15,7 @@ package com.cba.simulator.constant;
  * @author Gills Antony
  */
 public class AppConstants {
-	public static final String OUTPUT_FILE_PATH = "src/main/resources/output/ForecastedData.txt";
+	public static final String OUTPUT_FILE_PATH = "output/ForecastedData.txt";
 
 	public static final String PREDICT_DEFAULT_ONE_WEEK = "DefaultOneWeek";
 	public static final String PREDICT_ONE_DAY = "OneDay";

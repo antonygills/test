@@ -1,14 +1,1 @@
-com.cba.simulator.bootstrap
-com.cba.simulator.connector
 com.cba.simulator.constant
-com.cba.simulator.controller
-com.cba.simulator.dao
-com.cba.simulator.databaseservice
-com.cba.simulator.dataobject
-com.cba.simulator.dbunit
-com.cba.simulator.exception
-com.cba.simulator.junit.bootstrap
-com.cba.simulator.junit.model
-com.cba.simulator.junit.util
-com.cba.simulator.model
-com.cba.simulator.util

@@ -10,6 +10,7 @@
 
 	<!-- Version variables -->
 	<properties>
+		<java.version>1.7</java.version>
 		<junit.version>4.12</junit.version>
 		<log4j.version>1.2.17</log4j.version>
 		<commons-lang3.version>3.6</commons-lang3.version>
@@ -17,6 +18,8 @@
 		<dbunit.version>2.4.9</dbunit.version>
 		<mybatis.version>3.4.1</mybatis.version>
 		<mysql-connector.version>5.1.41</mysql-connector.version>
+		<maven.compiler-plugin.version>3.5.1</maven.compiler-plugin.version>
+		<maven.assembly-pliugin.version>2.6</maven.assembly-pliugin.version>
 	</properties>
 
 	<dependencies>
@@ -77,5 +80,52 @@
 			<version>1.1.1</version>
 		</dependency>
 	</dependencies>
+
+	<build>
+		<plugins>
+			<!-- Maven Compiler: compiles source files. -->
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>${maven.compiler-plugin.version}</version>
+				<configuration>
+					<source>${java.version}</source>
+					<target>${java.version}</target>
+				</configuration>
+			</plugin>
+			<!-- Maven Assembly: creates archives of project's source files, classes, 
+				dependencies etc. from flexible assembly descriptors. -->
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-assembly-plugin</artifactId>
+				<version>${maven.assembly-pliugin.version}</version>
+				<configuration>
+					<!-- fetches all project dependencies -->
+					<descriptorRefs>
+						<descriptorRef>jar-with-dependencies</descriptorRef>
+					</descriptorRefs>
+					<finalName>environment-simulator</finalName>
+					<appendAssemblyId>false</appendAssemblyId>
+					<!-- The class is added to the "Main-Class" attribute in the manifest 
+						file while making an executable jar -->
+					<archive>
+						<manifest>
+							<mainClass>com.cba.simulator.bootstrap.SimulatorBootstrap</mainClass>
+						</manifest>
+					</archive>
+				</configuration>
+				<executions>
+					<execution>
+						<id>make-assembly</id>
+						<!-- binds to the package phase -->
+						<phase>package</phase>
+						<goals>
+							<goal>single</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+		</plugins>
+	</build>
 
 </project>

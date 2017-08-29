@@ -11,6 +11,7 @@ package com.cba.simulator.util;
 
 import java.io.File;
 import java.io.FileWriter;
+import java.io.IOException;
 
 import org.apache.log4j.Logger;
 
@@ -44,6 +45,7 @@ public class FileUtils {
 
 		try {
 			if (!file.exists() && !file.isDirectory()) {
+				file.getParentFile().mkdirs();
 				boolean fileCreationStatus = file.createNewFile();
 				LOGGER.debug("Output File creation : " + fileCreationStatus);
 			}
@@ -58,6 +60,8 @@ public class FileUtils {
 					fileWriter.close();
 					LOGGER.info("Successfully wrote output to the file : " + filePath);
 				}
+			} catch (IOException e) {
+				throw new UtilsException(ErrorConstants.UTILS_UNABLE_FIND_FILE_PATH, e);
 			} catch (Exception e) {
 				throw new UtilsException(ErrorConstants.UTILS_FILE_CLOSE_FAILED, e);
 			}

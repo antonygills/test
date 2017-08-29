@@ -1,6 +1,7 @@
 package com.cba.simulator.dbunit;
 
 import java.sql.Connection;
+
 import java.sql.DriverManager;
 import java.util.List;
 
@@ -12,12 +13,14 @@ import org.dbunit.dataset.ITable;
 import org.dbunit.operation.DatabaseOperation;
 import org.dbunit.util.fileloader.DataFileLoader;
 import org.dbunit.util.fileloader.FlatXmlDataFileLoader;
+import org.junit.Ignore;
 import org.junit.Test;
 
 import com.cba.simulator.databaseservice.DataReadService;
 import com.cba.simulator.dataobject.EnvironmentDetailsDO;
 import com.cba.simulator.exception.DAOException;
 
+@Ignore
 public class TestDataReadService extends DatabaseTestCase {
 
 	private Connection jdbcConnection;

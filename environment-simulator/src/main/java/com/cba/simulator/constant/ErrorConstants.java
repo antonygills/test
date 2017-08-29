@@ -22,6 +22,7 @@ public class ErrorConstants {
 	public static final String UTILS_PARSE_FAILED = "Unable to parse the Data.";
 	public static final String UTILS_FILE_CLOSE_FAILED = "Unable to flush/close file resources.";
 	public static final String UTILS_FILE_WRITE_FAILED = "Unable to write data to file.";
+	public static final String UTILS_UNABLE_FIND_FILE_PATH = "Unable to find the specified path.";
 
 	public static final String BUSINESS_INVALIDARGS = "Invalid input arguments";
 	public static final String BUSINESS_INVALIDARGS_PASTDATE = "Please enter future date";
