@@ -1,3 +1,6 @@
+CREATE DATABASE weather;
+USE weather;
+
 CREATE TABLE location
 (
 	location_id int NOT NULL PRIMARY KEY AUTO_INCREMENT,
