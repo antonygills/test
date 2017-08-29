@@ -21,6 +21,7 @@ import com.cba.simulator.dataobject.SimulatorInputDTO;
 import com.cba.simulator.exception.BusinessException;
 import com.cba.simulator.exception.UtilsException;
 import com.cba.simulator.util.DateUtils;
+import com.cba.simulator.util.FileUtils;
 
 /**
  * Acts as triggering point of SimulatorBootstrap.
@@ -57,6 +58,7 @@ public class SimulatorBootstrap {
 		LOGGER.debug("Enter SimulatorBootstrap.");
 		SimulatorController simulatorController = new SimulatorController();
 		try {
+			AppConstants.loadExternalProperties(AppConstants.EXTERNAL_PROPERTY_FILE);
 			validateInputArgs(args);
 			SimulatorInputDTO simulatorInputDTO = processInputArgs(args);
 			simulatorController.startExecution(simulatorInputDTO);

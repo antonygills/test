@@ -71,11 +71,6 @@ public class SimulatorExecutor {
 				environmentSimulationResult = simulateConditionsPerLocation(environmentData, simulatorInputDTO);
 			}
 
-			// TODO remove this after testing
-			System.out.println("****************************************");
-			System.out.println(environmentSimulationResult);
-			System.out.println("****************************************");
-
 			if (environmentSimulationResult != null)
 				prepareOutputContent(environmentSimulationResult);
 
@@ -141,7 +136,7 @@ public class SimulatorExecutor {
 	 */
 	private void prepareOutputContent(List<SimulatorOutputDTO> environmentSimulationResult) throws UtilsException {
 		LOGGER.debug("Enter prepareOutputContent.");
-		String outputPath = AppConstants.OUTPUT_FILE_PATH;
+		String outputPath = AppConstants.OUTPUT_FILE;
 		String forecastedData = environmentSimulationResult.toString().substring(2,
 				environmentSimulationResult.toString().length() - 3);
 		FileUtils.writeOutputToFile(outputPath, forecastedData.replace("||,", ""));
