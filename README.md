@@ -16,13 +16,13 @@ Environment Simulation program predicts environment details such as weather cond
 
 ## Project setup
 
-#### Prerequisites
+###### Prerequisites
 
 - JDK 1.7 or higher (JAVA_HOME and PATH set) for compile and execution
 - Apache Maven 3.3 or higher (MVN_HOME and PATH set) for build
 
 
-#### Build
+###### Build
 Go to the project base directory, the directory where pom.xml for environment-simulator is present.
 
 Execute the command to build jar :
@@ -48,7 +48,7 @@ This module works in 3 modes :
 - **date** (one input date parameter)		=> Forecast environment details for the specific date.
 - **date-range** (two input date parameter)	=> Forecast environment details for the dates between queried start and end dates.
 
-#### Sample commands to execute the program,
+###### Sample commands to execute the program,
 ```
 	java -jar environment-simulator-1.0.jar
 	java -jar environment-simulator-1.0.jar <date>
@@ -57,11 +57,11 @@ This module works in 3 modes :
 
 Note : The date format should be yyyy-MM-dd, for eg: 2017-01-01.
 
-#### Main class
+###### Main class
 
 `com.cba.simulator.bootstrap.SimulatorBootstrap.java`
 
-#### Dataset Considered
+###### Dataset Considered
 
 Historical weather data between 2009 and 2016 (both years inclusive) for 3 locations listed below :
 
@@ -71,14 +71,14 @@ Historical weather data between 2009 and 2016 (both years inclusive) for 3 locat
 
 	Link to source data : [historical data source](https://www.wunderground.com/history/).
 
-#### Forecast Result
+###### Forecast Result
 
 After execution of the program, the forecasted weather data will be generated as a text file in the output directory.
 
 Format of data in the output file : 
 - location|latitude,longitude,elevation|date_time|conditions|temperature|pressure|humidity
 
-#### Sample output
+###### Sample output
 
 - Sydney|-33.52,151.13,58|2017-08-30 10:23:27|Warm|16.8|53.2|1016
 - Melbourne|-37.49,144.58,25|2017-08-30 10:23:27|Rain|11.1|70.4|1018
@@ -87,7 +87,7 @@ Format of data in the output file :
 
 
 ## References
-#### TestCases:
+###### TestCases:
 
 JUnit test cases are available in the following path within the project,
 
@@ -97,7 +97,7 @@ which would run on build using Maven.
 
 
 
-#### Documentation:
+###### Documentation:
 
 Documentations are available in the following path within the project,
 
