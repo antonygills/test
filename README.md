@@ -4,14 +4,22 @@ Environment Simulation program predicts environment details such as weather cond
 
 ## Technical Description:
 
-###### Process Flow
+##### Process Flow
 ![alt text](environment-simulator/src/main/resources/images/Workflow_Diagram.png)
 
-Forecasted output environment details will be of like : 
-```		Sydney|-33.52,151.13,58|2017-08-30 10:23:27|Warm|16.8|53.2|1016```
+1. **SimulatorBootstrap.java** - The process flow starts here. This class ensures correctness of user inputs, load external property file, process input arguments and starts the execution. 
+2. **SimulatorController.java** - This class controls the flow of program. Based on the user input, required historical data is fetched from database based and triggers the next execution stage.
+3. **SimulatorExecutor.java** - Historical environment data fetched from database is processed day of year and location wise to feed the prediction model. Prepare the output content from the predicted result received from model and write it to output file.
+4. **PredictionFunction.java** - Predicts the future weather parameter using ARIMA model. Also identify weather type using the predicted parameters.
+5. **DataReadService.java**, **MyBatisConnectionFactory.java**, **DataReadDAO.java** - These classes are used for fetching historical data from database using myBatis framework with the help of myBatis Configuration file and myBatis mapper file.
 
-which can be read in the following format: 
-```		location|latitude,longitude,elevation|date_time|conditions|temperature|pressure|humidity```
+Forecasted output environment details will be of like : 
+
+```Sydney|-33.52,151.13,58|2017-08-30 10:23:27|Warm|16.8|53.2|1016```
+
+which can be read in the following format:
+ 
+```location|latitude,longitude,elevation|date_time|conditions|temperature|pressure|humidity```
 
 ## Database setup
 - Execute the scripts [table_create_scripts.sql](/environment-simulator/src/main/resources/log4j.properties) to create database and tables in mysql database.</br>
@@ -37,17 +45,11 @@ Go to the project base directory, the directory where pom.xml for environment-si
 
 Execute the command to build jar :
 
-```
-	mvn clean install
-```
-
+![alt text](environment-simulator/src/main/resources/images/maven_install.png)
 
 The following outputs jar will be generated :  **environment-simulator.jar**
 
-You can skip the unit test cases by executing below mentioned command :
-```
-	mvn clean install -Dmaven.test.skip=true
-```
+![alt text](environment-simulator/src/main/resources/images/maven_install_skip_test.png)
 
 
 ## Execution Procedure
@@ -66,11 +68,10 @@ Configurable properties like output file path, database setup etc. are stored in
 Make necessary changes and place the file in the same path as the executable jar.
 
 ###### Commands to execute program,
-```
-	java -jar environment-simulator.jar
-	java -jar environment-simulator.jar <date>
-	java -jar environment-simulator.jar <start-date> <end-date>
-```
+
+![alt text](environment-simulator/src/main/resources/images/run_no_args.png)
+![alt text](environment-simulator/src/main/resources/images/run_one_args.png)
+![alt text](environment-simulator/src/main/resources/images/run_two_args.png)
 
 Note : The date format should be yyyy-MM-dd, for eg: 2017-08-28.
 
