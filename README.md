@@ -4,10 +4,10 @@ Environment Simulation program predicts environment details such as weather cond
 
 
 ## Database setup
-- Execute the scripts in the location "*/src/main/resources/database/table_create_scripts.sql*" to create database and tables in mysql database.</br>
-- Execute all insert scripts in the location "*/src/main/resources/database*" to load historical data for default locations to database.</br>
+- Execute the scripts [table_create_scripts.sql](/environment-simulator/src/main/resources/log4j.properties) to create database and tables in mysql database.</br>
+- Execute all insert scripts in the path ["/src/main/resources/database"](/environment-simulator/src/main/resources/database) to load historical data for default locations to database.</br>
 
-	NOTE : Following excel ("*/src/main/resources/database/create_historical_data.xlsx*" ) will help to create insert
+	NOTE : Following excel [create_historical_data.xlsx](/environment-simulator/src/main/resources/database/create_historical_data.xlsx) will help to create insert
 	scripts of historical data.
 
 	Default Locations : Sydney, Melbourne, Adelaide.
@@ -52,8 +52,8 @@ This module works in 3 modes :
 
 ###### Input properties
 
-Configurable properties like output file path, database setup etc. are stored in "**EnvironmentSimulator.properties**" file.
-Make necessary changes and place the file in the same location as the executable jar. Sample file is available in the path "*/src/main/resources/properties/EnvironmentSimulator.properties*".
+Configurable properties like output file path, database setup etc. are stored in [EnvironmentSimulator.properties)](/environment-simulator/src/main/resources/properties/EnvironmentSimulator.properties) file.
+Make necessary changes and place the file in the same path as the executable jar.
 
 ###### Commands to execute program,
 ```
@@ -62,7 +62,7 @@ Make necessary changes and place the file in the same location as the executable
 	java -jar environment-simulator.jar <start-date> <end-date>
 ```
 
-Note : The date format should be yyyy-MM-dd, for eg: 2017-01-01.
+Note : The date format should be yyyy-MM-dd, for eg: 2017-08-28.
 
 ###### Main class
 
@@ -80,7 +80,7 @@ Historical weather data between 2009 and 2016 (both years inclusive) for 3 locat
 
 ###### Forecast Result
 
-After execution of the program, the forecasted weather data will be generated as a text file in the path provided in "*EnvironmentSimulator.properties*".
+After execution of the program, the forecasted weather data will be generated as a text file in the path as in [EnvironmentSimulator.properties](/environment-simulator/src/main/resources/properties/EnvironmentSimulator.properties).
 
 Format of data in the output file : 
 - **location|latitude,longitude,elevation|date_time|conditions|temperature|pressure|humidity**
@@ -91,27 +91,26 @@ Format of data in the output file :
 -  **Melbourne|-37.49,144.58,25|2017-08-30 10:23:27|Rain|11.1|70.4|1018**
 -  **Adelaide|-34.56,138.36,59|2017-08-30 10:23:27|Rain|16.7|61.3|1014**
 
-Logs will be generated in a text file named '*log4j-application.log*' in the directory '*/log*' which will be in the same location as the executable jar.
+Logs will be generated in a text file named '*log4j-application.log*' in the directory '*/log*' which will be in the same path as the executable jar. Log4j properties can be edited [log4j.properties](environment-simulator/src/main/resources/log4j.properties).
 
 
 ## References
 ###### TestCases:
 
-JUnit test cases are available in the following path within the project,
-
-`"/src/test/java"`
-
-which would run on build using Maven.
-
-
+JUnit test cases are available in the path ["/src/test/java/com/cba/simulator"](environment-simulator/src/test/java/com/cba/simulator), which would run on build using Maven.
 
 ###### Documentation:
 
-Documentations are available in the following path within the project,
-
-`"/doc" => Auto-generated javadoc`
-
+Documentations are available in the path ["/doc"](environment-simulator/doc/).
 
 ## Author / Contribution
 
 Gills Antony
+
+## Version
+
+1.0 - Initial and complete release version.
+
+## License
+
+This project is licensed under the GNU License. See the [LICENSE](/LICENSE) for details.
