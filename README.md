@@ -42,13 +42,20 @@ You can skip the unit test cases by executing below mentioned command :
 
 ## Execution Procedure
 
+######  Modes
+
 This module works in 3 modes :
 
 - **default-one week** (no input parameter)	=> Forecast environment details for one week from today.
 - **date** (one input date parameter)		=> Forecast environment details for the specific date.
 - **date-range** (two input date parameter)	=> Forecast environment details for the dates between queried start and end dates.
 
-###### Sample commands to execute the program,
+###### Input properties
+
+Configurable properties like output file path, database setup etc. are stored in "**EnvironmentSimulator.properties**" file.
+Make necessary changes and place the file in the same location as the executable jar. Sample file is available in the path "*/src/main/resources/properties/EnvironmentSimulator.properties*".
+
+###### Commands to execute program,
 ```
 	java -jar environment-simulator.jar
 	java -jar environment-simulator.jar <date>
@@ -56,10 +63,6 @@ This module works in 3 modes :
 ```
 
 Note : The date format should be yyyy-MM-dd, for eg: 2017-01-01.
-
-###### Input properties
-Configurable properties like output file path, database setup etc. are stored in "**EnvironmentSimulator.properties**" file.
-Make necessary changes and place the file in the same location as the executable jar. Sample file is available in the path "*/src/main/resources/properties/EnvironmentSimulator.properties*".
 
 ###### Main class
 
