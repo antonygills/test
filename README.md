@@ -4,10 +4,10 @@ Environment Simulation program predicts environment details such as weather cond
 
 
 ## Database setup
-- Execute the scripts in the location "/src/main/resources/database/table_create_scripts.sql" to create database and tables in mysql database.</br>
-- Execute all insert scripts in the location "/src/main/resources/database" to load historical data for default locations to database.</br>
+- Execute the scripts in the location "*/src/main/resources/database/table_create_scripts.sql*" to create database and tables in mysql database.</br>
+- Execute all insert scripts in the location "*/src/main/resources/database*" to load historical data for default locations to database.</br>
 
-	NOTE : Following excel ("/src/main/resources/database/create_historical_data.xlsx" ) will help to create insert
+	NOTE : Following excel ("*/src/main/resources/database/create_historical_data.xlsx*" ) will help to create insert
 	scripts of historical data.
 
 	Default Locations : Sydney, Melbourne, Adelaide.
@@ -32,7 +32,7 @@ Execute the command to build jar :
 ```
 
 
-The following outputs jar will be generated :  **environment-simulator-1.0.jar**
+The following outputs jar will be generated :  **environment-simulator.jar**
 
 You can skip the unit test cases by executing below mentioned command :
 ```
@@ -50,9 +50,9 @@ This module works in 3 modes :
 
 ###### Sample commands to execute the program,
 ```
-	java -jar environment-simulator-1.0.jar
-	java -jar environment-simulator-1.0.jar <date>
-	java -jar environment-simulator-1.0.jar <start-date> <end-date>
+	java -jar environment-simulator.jar
+	java -jar environment-simulator.jar <date>
+	java -jar environment-simulator.jar <start-date> <end-date>
 ```
 
 Note : The date format should be yyyy-MM-dd, for eg: 2017-01-01.
@@ -73,7 +73,8 @@ Historical weather data between 2009 and 2016 (both years inclusive) for 3 locat
 
 ###### Forecast Result
 
-After execution of the program, the forecasted weather data will be generated as a text file in the output directory.
+After execution of the program, the forecasted weather data will be generated as a text file named, 
+**ForecastedData.txt** in the directory '*/output*' which will be in the same location as the executable jar.
 
 Format of data in the output file : 
 - **location|latitude,longitude,elevation|date_time|conditions|temperature|pressure|humidity**
@@ -84,6 +85,7 @@ Format of data in the output file :
 -  **Melbourne|-37.49,144.58,25|2017-08-30 10:23:27|Rain|11.1|70.4|1018**
 -  **Adelaide|-34.56,138.36,59|2017-08-30 10:23:27|Rain|16.7|61.3|1014**
 
+Logs will be generated in a text file named '*log4j-application.log*' in the directory '*/log*' which will be in the same location as the executable jar.
 
 
 ## References
