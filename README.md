@@ -52,7 +52,7 @@ This module works in 3 modes :
 
 ###### Input properties
 
-Configurable properties like output file path, database setup etc. are stored in [EnvironmentSimulator.properties)](/environment-simulator/src/main/resources/properties/EnvironmentSimulator.properties)] file.
+Configurable properties like output file path, database setup etc. are stored in [EnvironmentSimulator.properties)](/environment-simulator/src/main/resources/properties/EnvironmentSimulator.properties) file.
 Make necessary changes and place the file in the same path as the executable jar.
 
 ###### Commands to execute program,
@@ -62,7 +62,7 @@ Make necessary changes and place the file in the same path as the executable jar
 	java -jar environment-simulator.jar <start-date> <end-date>
 ```
 
-Note : The date format should be yyyy-MM-dd, for eg: 2017-01-01.
+Note : The date format should be yyyy-MM-dd, for eg: 2017-08-28.
 
 ###### Main class
 
@@ -80,7 +80,7 @@ Historical weather data between 2009 and 2016 (both years inclusive) for 3 locat
 
 ###### Forecast Result
 
-After execution of the program, the forecasted weather data will be generated as a text file in the path provided in [EnvironmentSimulator.properties](/environment-simulator/src/main/resources/properties/EnvironmentSimulator.properties).
+After execution of the program, the forecasted weather data will be generated as a text file in the path as in [EnvironmentSimulator.properties](/environment-simulator/src/main/resources/properties/EnvironmentSimulator.properties).
 
 Format of data in the output file : 
 - **location|latitude,longitude,elevation|date_time|conditions|temperature|pressure|humidity**
@@ -97,12 +97,20 @@ Logs will be generated in a text file named '*log4j-application.log*' in the dir
 ## References
 ###### TestCases:
 
-JUnit test cases are available in the path, ["/src/test/java/com/cba/simulator"](environment-simulator/src/test/java/com/cba/simulator), which would run on build using Maven.
+JUnit test cases are available in the path ["/src/test/java/com/cba/simulator"](environment-simulator/src/test/java/com/cba/simulator), which would run on build using Maven.
 
 ###### Documentation:
 
-Documentations are available in the path, ["/doc"](environment-simulator/doc/).
+Documentations are available in the path ["/doc"](environment-simulator/doc/).
 
 ## Author / Contribution
 
 Gills Antony
+
+## Version
+
+1.0 - Initial and complete release version.
+
+## License
+
+This project is licensed under the GNU License. See the [LICENSE](/LICENSE) for details.
