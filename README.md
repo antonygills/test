@@ -1,9 +1,10 @@
 # Environment Simulator
 
-Environment Simulation program predicts environment details such as weather conditions for different locations based on past data.
+Environment Simulation program predicts environment details such as weather conditions for different locations based on historical data.
 
 ## Functional Description :
-When the program is triggered, historical data available from previous years is fetched as reference data and forecast the environment conditions for future days of the year. Prediction of weather parameters (temperature, pressure & relative humidity) are performed by using [ARIMA Model](https://github.com/Workday/timeseries-forecast), which provides a time series forecasting functionality. Then Weather condition (Rainy, Fog, Hot etc.) is predicted based on the forecasted weather parameters. Result of the program will be a list of environment conditions for different locations and different dates, which will be written to an output file. Each lines of the result include name of the location, its position (combination of its latitude, longitude & elevation), prediction time (expressed in UTC timezone), weather condition, temperature(°C), pressure(hPa) and relative humidity(%).
+When the program is triggered, historical data available from previous years is fetched as reference data and forecast the environment conditions for future days of the year. Prediction of weather parameters (temperature, pressure & relative humidity) are performed by using [ARIMA Model](https://github.com/Workday/timeseries-forecast), which provides a time series forecasting functionality. Then Weather condition (Rainy, Fog, Hot etc.) is predicted based on the forecasted weather parameters. </br>
+Result of the program will be a list of environment conditions for different locations and different dates, which will be written to an output file. Each lines of the result include name of the location, its position (combination of its latitude, longitude & elevation), prediction time (expressed in UTC timezone), weather condition, temperature(°C), pressure(hPa) and relative humidity(%).
 
 Forecasted environment details will be like : 
 
@@ -64,7 +65,7 @@ The following outputs jar will be generated :  **environment-simulator.jar**
 ![alt text](environment-simulator/src/main/resources/images/maven_install_skip_test.png)
 
 
-## Execution Procedure
+### Program Execution
 
 ####  Modes of operation
 
@@ -79,7 +80,7 @@ This module works in 3 modes :
 Configurable properties like output file path, database setup etc. are stored in [EnvironmentSimulator.properties](/environment-simulator/src/main/resources/properties/EnvironmentSimulator.properties) file.
 Make necessary changes and place the file in the same path as the executable jar.
 
-#### Commands to execute program,
+#### Execution Commands
 
 ![alt text](environment-simulator/src/main/resources/images/run_no_args.png)
 ![alt text](environment-simulator/src/main/resources/images/run_one_args.png)
