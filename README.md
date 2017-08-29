@@ -1,10 +1,10 @@
 # Environment Simulator
 
-Environment Simulation program predicts environment details such as weather conditions for different locations based on historical data.
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;		Environment Simulation program predicts environment details such as weather conditions for different locations based on historical data.
 
 ## Functional Description :
-When the program is triggered, historical data available from previous years is fetched as reference data and forecast the environment conditions for future days of the year. Prediction of weather parameters (temperature, pressure & relative humidity) are performed by using [ARIMA Model](https://github.com/Workday/timeseries-forecast), which provides a time series forecasting functionality. Then Weather condition (Rainy, Fog, Hot etc.) is predicted based on the forecasted weather parameters. </br>
-Result of the program will be a list of environment conditions for different locations and different dates, which will be written to an output file. Each lines of the result include name of the location, its position (combination of its latitude, longitude & elevation), prediction time (expressed in UTC timezone), weather condition, temperature(°C), pressure(hPa) and relative humidity(%).
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;		When the program is triggered, historical data available from previous years is fetched as reference data and forecast the environment conditions for future days of the year. Prediction of weather parameters (temperature, pressure & relative humidity) are performed by using [ARIMA Model](https://github.com/Workday/timeseries-forecast), which provides a time series forecasting functionality. Then Weather condition (Rainy, Fog, Hot etc.) is predicted based on the forecasted weather parameters. </br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;		Result of the program will be a list of environment conditions for different locations and different dates, which will be written to an output file. Each lines of the result include name of the location, its position (combination of its latitude, longitude & elevation), prediction time (expressed in UTC timezone), weather condition, temperature(°C), pressure(hPa) and relative humidity(%).
 
 Forecasted environment details will be like : 
 
