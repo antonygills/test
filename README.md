@@ -73,7 +73,8 @@ Historical weather data between 2009 and 2016 (both years inclusive) for 3 locat
 
 ###### Forecast Result
 
-After execution of the program, the forecasted weather data will be generated as a text file in the output directory.
+After execution of the program, the forecasted weather data will be generated as a text file named, 
+**ForecastedData.txt** in the directory '*/output*' which will be in the same location as the executable jar.
 
 Format of data in the output file : 
 - **location|latitude,longitude,elevation|date_time|conditions|temperature|pressure|humidity**
@@ -84,6 +85,7 @@ Format of data in the output file :
 -  **Melbourne|-37.49,144.58,25|2017-08-30 10:23:27|Rain|11.1|70.4|1018**
 -  **Adelaide|-34.56,138.36,59|2017-08-30 10:23:27|Rain|16.7|61.3|1014**
 
+Logs will be generated in a text file named '*log4j-application.log*' in the directory '*/log*' which will be in the same location as the executable jar.
 
 
 ## References
@@ -91,7 +93,7 @@ Format of data in the output file :
 
 JUnit test cases are available in the following path within the project,
 
-`"*/src/test/java*"`
+`"/src/test/java"`
 
 which would run on build using Maven.
 
