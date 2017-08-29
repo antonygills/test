@@ -2,6 +2,16 @@
 
 Environment Simulation program predicts environment details such as weather conditions for different locations based on past data.
 
+## Technical Description:
+
+###### Process Flow
+![alt text](environment-simulator/src/main/resources/images/Workflow_Diagram.png)
+
+Forecasted output environment details will be of like : 
+```		Sydney|-33.52,151.13,58|2017-08-30 10:23:27|Warm|16.8|53.2|1016```
+
+which can be read in the following format: 
+```		location|latitude,longitude,elevation|date_time|conditions|temperature|pressure|humidity```
 
 ## Database setup
 - Execute the scripts [table_create_scripts.sql](/environment-simulator/src/main/resources/log4j.properties) to create database and tables in mysql database.</br>
@@ -66,7 +76,7 @@ Note : The date format should be yyyy-MM-dd, for eg: 2017-08-28.
 
 ###### Main class
 
-`com.cba.simulator.bootstrap.SimulatorBootstrap.java`
+[com.cba.simulator.bootstrap.SimulatorBootstrap.java](environment-simulator/src/main/java/com/cba/simulator/bootstrap/SimulatorBootstrap.java)
 
 ###### Dataset Considered
 
