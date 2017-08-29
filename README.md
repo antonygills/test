@@ -25,7 +25,10 @@ which can be read in the following order :
 4. **PredictionFunction.java** - Predicts the future weather parameters using ARIMA model. Also identify weather type from the predicted parameters.
 5. **DataReadService.java**, **MyBatisConnectionFactory.java**, **DataReadDAO.java** - These classes are used for fetching historical data from database using myBatis framework with the help of myBatis Configuration file and myBatis mapper file.
 
-## Database setup
+
+## Project setup
+
+### Database
 
 Data related to location and weather details are stored in 'LOCATION' and 'WEATHER_DETAILS' table respectively.</br>
 LOCATION table store data like location name, latitude, longitude, elevation etc.
@@ -41,7 +44,7 @@ WEATHER_DETAILS table store data like date, temperature, pressure, humidity, con
 	
 - For adding new location download historical data and insert it to database.
 
-## Project setup
+### Program
 
 ###### Prerequisites
 
