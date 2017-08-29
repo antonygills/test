@@ -12,7 +12,7 @@ package com.cba.simulator.dataobject;
 import com.cba.simulator.constant.AppConstants;
 
 /**
- * Data transfer object for storing and transfering of output data (predicted
+ * Data transfer object for storing and transferring of output data (predicted
  * environment details).
  * 
  * @author Gills Antony
