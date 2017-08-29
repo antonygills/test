@@ -31,8 +31,8 @@ which can be read in the following order :
 
 ### Database
 
-Data related to location and weather details are stored in 'LOCATION' and 'WEATHER_DETAILS' table respectively.</br>
-LOCATION table store data like location name, latitude, longitude, elevation etc.
+Data is stored in two tables, 'LOCATION' and 'WEATHER_DETAILS'.</br>
+LOCATION table store data like location name, latitude, longitude, elevation etc.</br>
 WEATHER_DETAILS table store data like date, temperature, pressure, humidity, condition etc.
 
 - Execute the scripts [table_create_scripts.sql](/environment-simulator/src/main/resources/log4j.properties) to create database and tables in mysql database.</br>
