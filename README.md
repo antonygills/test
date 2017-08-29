@@ -57,6 +57,10 @@ This module works in 3 modes :
 
 Note : The date format should be yyyy-MM-dd, for eg: 2017-01-01.
 
+###### Input properties
+Configurable properties like output file path, database setup etc. are stored in "**EnvironmentSimulator.properties**" file.
+Make necessary changes and place the file in the same location as the executable jar. Sample file is available in the path "*/src/main/resources/properties/EnvironmentSimulator.properties*".
+
 ###### Main class
 
 `com.cba.simulator.bootstrap.SimulatorBootstrap.java`
@@ -73,8 +77,7 @@ Historical weather data between 2009 and 2016 (both years inclusive) for 3 locat
 
 ###### Forecast Result
 
-After execution of the program, the forecasted weather data will be generated as a text file named, 
-**ForecastedData.txt** in the directory '*/output*' which will be in the same location as the executable jar.
+After execution of the program, the forecasted weather data will be generated as a text file in the path provided in "*EnvironmentSimulator.properties*".
 
 Format of data in the output file : 
 - **location|latitude,longitude,elevation|date_time|conditions|temperature|pressure|humidity**
