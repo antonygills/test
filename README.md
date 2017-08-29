@@ -2,7 +2,7 @@
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;		Environment Simulation program predicts environment details such as weather conditions for different locations based on historical data.
 
-## Functional Description :
+## Functional Description
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;		When the program is triggered, historical data available from previous years is fetched as reference data and forecast the environment conditions for future days of the year. Prediction of weather parameters (temperature, pressure & relative humidity) are performed by using [ARIMA Model](https://github.com/Workday/timeseries-forecast), which provides a time series forecasting functionality. Then Weather condition (Rainy, Fog, Hot etc.) is predicted based on the forecasted weather parameters. </br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;		Result of the program will be a list of environment conditions for different locations and different dates, which will be written to an output file. Each lines of the result include name of the location, its position (combination of its latitude, longitude & elevation), prediction time (expressed in UTC timezone), weather condition, temperature(°C), pressure(hPa) and relative humidity(%).
 
@@ -15,7 +15,7 @@ which can be read in the following order :
 ```location|latitude,longitude,elevation|date_time|conditions|temperature|pressure|humidity```
 
 
-## Technical Description :
+## Technical Description
 
 ### Process Flow
 ![alt text](environment-simulator/src/main/resources/images/Workflow_Diagram.png)
@@ -65,7 +65,8 @@ The following outputs jar will be generated :  **environment-simulator.jar**
 ![alt text](environment-simulator/src/main/resources/images/maven_install_skip_test.png)
 
 
-### Program Execution
+
+## Program Execution
 
 ####  Modes of operation
 
